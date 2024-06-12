@@ -40,7 +40,7 @@ jobs:
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
-      run: terraform -chdir=azure_tf fmt -check
+      run: terraform fmt -check
 
     # Validate the Terraform configuration to ensure it is syntactically correct and internally consistent using terraform validate.
     - name: Validate Terraform configuration
