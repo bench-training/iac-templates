@@ -55,7 +55,7 @@ jobs:
       run: terraform -chdir=azure_tf plan -input=false
 
     - name: Terraform Apply
-      run: terraform apply -auto-approve -input=false
+      run: terraform -chdir=azure_tf apply -auto-approve -input=false
 
     # - name: Save plan for later jobs
     #   uses: actions/upload-artifact@v2
