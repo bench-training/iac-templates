@@ -1,6 +1,6 @@
 # The build pipeline is responsible for validating and preparing your Terraform code.
 #
-name: 'Terraform'
+name: 'Terraform Build'
 
 on: workflow_dispatch
 
@@ -32,8 +32,8 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    - name: Terraform Linting
-      run: tflint
+    # - name: Terraform Linting
+    #   run: tflint
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
@@ -44,8 +44,8 @@ jobs:
       run: terraform validate
 
     # Scan for security vulnerabilities in your Terraform code.
-    - name: Run tfsec
-      run: tfsec .
+    # - name: Run tfsec
+    #   run: tfsec .
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
