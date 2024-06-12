@@ -40,7 +40,7 @@ jobs:
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
-      run: terraform fmt -recursive -list=true -write=true
+      run: terraform fmt -recursive -check -diff
 
     # Validate the Terraform configuration to ensure it is syntactically correct and internally consistent using terraform validate.
     - name: Validate Terraform configuration
