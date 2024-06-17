@@ -4,8 +4,9 @@ name: 'Terraform Build'
 
 on: workflow_dispatch
 
-# permissions:
-#   contents: read
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   terraform:
