@@ -9,20 +9,20 @@ terraform {
     }
   }
   backend "azurerm" {
-      resource_group_name  = "tfstate"
-      storage_account_name = "<storage_account_name>"
+      resource_group_name  = "pj-jinkee"
+      storage_account_name = "pjjinkeesta"
       container_name       = "tfstate"
-      key                  = "terraform.tfstate"
+      key                  = "${{ secrets.STA_KEY }}"
   }
 
 }
 
 provider "azurerm" {
   features {}
-  subscription_id   = AZURE_SUBSCRIPTION_ID
-  tenant_id         = AZURE_TENANT_ID
-  client_id         = AZURE_CLIENT_ID
-  client_secret     = AZURE_AD_CLIENT_SECRET
+  subscription_id   = "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+  tenant_id         = "${{ secrets.AZURE_TENANT_ID }}"
+  client_id         = "${{ secrets.AZURE_CLIENT_ID }}"
+  client_secret     = "${{ secrets.AZURE_AD_CLIENT_SECRET }}"
 }
 
 resource "azurerm_resource_group" "state-demo-secure" {
