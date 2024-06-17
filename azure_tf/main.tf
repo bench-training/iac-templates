@@ -12,17 +12,17 @@ terraform {
       resource_group_name  = "pj-jinkee"
       storage_account_name = "pjjinkeesta"
       container_name       = "tfstate"
-      key                  = "${{ secrets.STA_KEY }}"
+      key                  = "STA_KEY"
   }
 
 }
 
 provider "azurerm" {
   features {}
-  subscription_id   = "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
-  tenant_id         = "${{ secrets.AZURE_TENANT_ID }}"
-  client_id         = "${{ secrets.AZURE_CLIENT_ID }}"
-  client_secret     = "${{ secrets.AZURE_AD_CLIENT_SECRET }}"
+#  subscription_id   = "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+#  tenant_id         = "${{ secrets.AZURE_TENANT_ID }}"
+#  client_id         = "${{ secrets.AZURE_CLIENT_ID }}"
+#  client_secret     = "${{ secrets.AZURE_AD_CLIENT_SECRET }}"
 }
 
 resource "azurerm_resource_group" "state-demo-secure" {
