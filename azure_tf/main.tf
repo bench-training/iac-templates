@@ -3,18 +3,25 @@
 
 terraform {
   required_providers {
-    local = {
-      source  = "hashicorp/local"
-      version = "2.5.1"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "3.108.0"
     }
   }
+  backend "azurerm" {
+      resource_group_name  = "tfstate"
+      storage_account_name = "<storage_account_name>"
+      container_name       = "tfstate"
+      key                  = "terraform.tfstate"
+  }
+
 }
 
-provider "local" {
-  # Configuration options
+provider "azurerm" {
+  features {}
 }
 
-resource "local_file" "sample_file" {
-  content  = "foo!"
-  filename = "${path.module}/foo.bar"
+resource "azurerm_resource_group" "state-demo-secure" {
+  name     = "state-demo"
+  location = "southeast asia"
 }
