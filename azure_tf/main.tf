@@ -13,6 +13,7 @@ terraform {
       storage_account_name = "pjjinkeesta"
       container_name       = "tfstate"
       key                  = "STA_KEY"
+      use_oidc             = true
   }
 
 }
