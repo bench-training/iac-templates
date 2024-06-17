@@ -13,6 +13,8 @@ terraform {
       storage_account_name = "pjjinkeesta"
       container_name       = "tfstate"
       key                  = "terraform.tfstate"
+      use_oidc             = true
+      client_id            = "${{ secrets.AZURE_CLIENT_ID }}"
       tenant_id            = "${{ secrets.AZURE_TENANT_ID }}"
       subscription_id      = "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
   }
