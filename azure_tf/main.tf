@@ -12,8 +12,9 @@ terraform {
       resource_group_name  = "pj-jinkee"
       storage_account_name = "pjjinkeesta"
       container_name       = "tfstate"
-      key                  = "STA_KEY"
-      use_oidc             = true
+      key                  = "terraform.tfstate"
+      tenant_id            = "${{ secrets.AZURE_TENANT_ID }}"
+      subscription_id      = "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
   }
 
 }
