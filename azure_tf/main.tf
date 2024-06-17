@@ -14,9 +14,6 @@ terraform {
       container_name       = "tfstate"
       key                  = "terraform.tfstate"
       use_oidc             = true
-      client_id            = AZURE_CLIENT_ID
-      tenant_id            = AZURE_TENANT_ID
-      subscription_id      = AZURE_SUBSCRIPTION_ID
   }
 
 }
