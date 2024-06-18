@@ -18,3 +18,4 @@ jobs:
         run: |
           az account show
           pwd
+          az network asg create -g rg-proj-bip -n bench-asg
