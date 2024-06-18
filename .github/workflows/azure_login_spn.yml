@@ -1,0 +1,20 @@
+name: AzureLoginSample
+#on: [push]
+on: workflow_dispatch
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Log in with Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure CLI script
+        run: |
+          az account show
+          pwd
