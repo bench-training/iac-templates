@@ -18,4 +18,4 @@ jobs:
         run: |
           az account show
           pwd
-          az network asg delete -g rg-proj-bip -n bench-asg
+          # az network asg delete -g rg-proj-bip -n bench-asg
